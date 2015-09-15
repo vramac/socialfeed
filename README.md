@@ -17,7 +17,7 @@ Time spent: `20`
 - [ ] User can click compose anywhere, and submit a new post on a separate page.
 
 
-![Video Walkthrough](social-feed3.gif)
+![Video Walkthrough](socialfeed-3.gif)
 
 
 
