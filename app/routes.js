@@ -202,21 +202,20 @@ module.exports = (app) => {
         // await twitterClient.promise.post('statuses/update',{'status':reply,
         //     'in_reply_to_status_id_str':id})
 
-        //try {
+        try {
             await twitterClient.promise.post(uri,{ status: share})
-        // }
-        // catch (e) {
-        //     console.log('error ', e)
-        // }   
-        
+        }
+        catch (e) {
+            console.log('error ', e)
+        }   
         console.log("Successfully re-tweeted...")
         res.redirect('/timeline')
     
     }))
 
     app.get('/reply/:id', isLoggedIn, then (async (req, res) => {
-        let in_reply_to_status_id = req.params.id
-        console.log("Reply Id: ", in_reply_to_status_id)
+        let id = req.params.id
+        console.log("Reply Id: ", id)
         try {
         let token_secret = 'QBuzrhqoCKaHKAoIMFHsrVbllXpOZiGNimynlAD3wfzPw'
         let twitterClient = new Twitter({
@@ -225,6 +224,9 @@ module.exports = (app) => {
             access_token_key: req.user.twitter.token,
             access_token_secret: token_secret
         })
+
+        let uri = 'statuses/show/' + id
+        console.log("uri: ", uri)
 
         let [tweet] = await twitterClient.promise.get(uri)
         let post = {
