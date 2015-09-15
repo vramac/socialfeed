@@ -15,3 +15,11 @@ Time spent: `20`
 - [X] User can click share in the timeline, and share with a custom message on a separate page.
 - [X] User can click reply in the timeline, and submit a reply on a separate page.
 - [ ] User can click compose anywhere, and submit a new post on a separate page.
+
+
+![Video Walkthrough](blogger-demo1.gif)
+
+
+
+
+
